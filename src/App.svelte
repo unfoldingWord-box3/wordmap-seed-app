@@ -1,11 +1,12 @@
 <script>
-    import AlignmentEditorWrapper from './AlignmentEditorWrapper.svelte'
+	import AlignmentEditorWrapper from './AlignmentEditorWrapper.svelte';
+	import WordMapPlayground from './WordMapPlayground.svelte';
 	export let name;
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
-    <AlignmentEditorWrapper />
+	<WordMapPlayground />
 </main>
 
 <style>

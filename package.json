@@ -21,7 +21,10 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
+    "alignment-editor-rcl": "0.0.23",
+    "react-json-view": "^1.19.1",
     "sirv-cli": "^1.0.0",
-    "alignment-editor-rcl": "0.0.23"
+    "word-map": "^0.1.9",
+    "wordmap-react-toolkit": "^0.4.1"
   }
 }
