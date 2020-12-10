@@ -10,23 +10,23 @@
 <table>
   <tr>
     <td class="label">Source: </td>
-    <td><textarea bind:value={$source} /></td>
+    <td><textarea value={$source} on:change={(e)=>{ $source = e.target.value; }} /></td>
 
     <td class="label">Target:</td>
-    <td><textarea bind:value={$target} /></td>
+    <td><textarea value={$target} on:change={(e)=>{ $target = e.target.value; }} /></td>
   </tr>
   <tr>
     <td class="label">Source Corpus:</td>
-    <td><textarea bind:value={$sourceCorpus} /></td>
+    <td><textarea value={$sourceCorpus} on:change={(e)=>{ $sourceCorpus = e.target.value; }} /></td>
 
     <td class="label">Target Corpus:</td>
-    <td><textarea bind:value={$targetCorpus} /></td>
+    <td><textarea value={$targetCorpus} on:change={(e)=>{ $targetCorpus = e.target.value; }} /></td>
   </tr>
   <tr>
     <td class="label">Source Alignment Memory:</td>
-    <td><textarea bind:value={$sourceAlignment} /></td>
+    <td><textarea value={$sourceAlignment} on:change={(e)=>{ $sourceAlignment = e.target.value; }} /></td>
 
     <td class="label">Target Alignment Memory:</td>
-    <td><textarea bind:value={$targetAlignment} /></td>
+    <td><textarea value={$targetAlignment} on:change={(e)=>{ $targetAlignment = e.target.value; }} /></td>
   </tr>
 </table>

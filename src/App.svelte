@@ -1,5 +1,4 @@
 <script>
-	import AlignmentEditorWrapper from './AlignmentEditorWrapper.svelte';
 	import WordMap from './WordMap.svelte';
 	export let name;
 </script>

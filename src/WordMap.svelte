@@ -3,21 +3,23 @@
   import InputForm from './components/InputForm.svelte';
   import Suggestions from './components/Suggestions.svelte';
   import { writable } from 'svelte/store';
+  import { getData } from './core/data';
+	const data = getData();
 
-  export let corpus = [["Guten Tag", "Good day"]];
-  export let alignmentMemory = [["Tag", "day"]];
-  export let source = writable("Guten Tag");
-  export let target = writable("Good day");
+  // export let corpus = [["Guten Tag", "Good day"]];
+  // export let alignmentMemory = [["Tag", "day"]];
+  export let source = writable(data.source);
+  export let target = writable(data.target);
 
-  let sourceCorpus = writable(corpus.map(([_source, _target]) => _source).join('\n'));
-  let targetCorpus = writable(corpus.map(([_source, _target]) => _target).join('\n'));
-  let sourceAlignment = writable(alignmentMemory.map(([_source, _]) => _source).join('\n'));
-  let targetAlignment = writable(alignmentMemory.map(([_, _target]) => _target).join('\n'));
+  export let sourceCorpus = writable(data.sourceWords);
+  export let targetCorpus = writable(data.targetWords);
+  export let sourceAlignment = writable(data.sourceWords);
+  export let targetAlignment = writable(data.targetWords);
   
   let map;
   let suggestions;
 
-  $: if (true) {
+  $: {
     map = new WordMAP();
 
     $sourceAlignment?.split('\n').forEach((_source, i) => {
@@ -26,9 +28,10 @@
     });
   
     map.appendCorpus(
-      $sourceCorpus?.split('\n').map((_source, i) => (
-        [_source, $targetCorpus.split('\n')[i]]
-      ))
+      $sourceCorpus?.split('\n').map((_source, i) => {
+        const _target = $targetCorpus?.split('\n')[i];
+        return [_source, _target];
+      }).filter(([_source, _target]) => ( _source && _target ))
     );
 
     suggestions = map.predict($source, $target);
