@@ -670,11 +670,6 @@ mem@^4.0.0:
     mimic-fn "^2.0.0"
     p-is-promise "^2.0.0"
 
-memoize-one@^5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-5.1.1.tgz#047b6e3199b508eaec03504de71229b8eb1d75c0"
-  integrity sha512-HKeeBpWvqiVJD57ZUAsJNm71eHTykffzcLZVYWiVfQeI1rJtuEaS7hQiEpWfVVk18donPwJEcFKIkCmPJNOhHA==
-
 merge-stream@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/merge-stream/-/merge-stream-2.0.0.tgz#52823629a14dd00c9770fb6ad47dc6310f2c1f60"
@@ -1237,13 +1232,6 @@ wordmap-lexer@^0.3.5:
   integrity sha512-7yyNIW6E4ea5vgaqvgcXihjZlVrlEg4KUuHdkmSC3O73yyTZs8YUY7ipGpHI2zWwgErTwfWCLXZ49s8eJoVn8g==
   dependencies:
     string-punctuation-tokenizer "2.0.0"
-
-wordmap-react-toolkit@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/wordmap-react-toolkit/-/wordmap-react-toolkit-0.4.1.tgz#44665cc5557485681254936c4b5df835948d6c53"
-  integrity sha512-rdJPMiGx8GfuDsyDTr8pN+ygyxlwcJ4E3qsbGOXfFJRyAXAPgufulbRv1/8upv03+SWbFqq+Q/EkcxWVsFnSQA==
-  dependencies:
-    memoize-one "^5.1.1"
 
 wordmap@^0.4.4:
   version "0.4.4"

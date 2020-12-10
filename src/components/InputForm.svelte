@@ -30,3 +30,12 @@
     <td><textarea value={$targetAlignment} on:change={(e)=>{ $targetAlignment = e.target.value; }} /></td>
   </tr>
 </table>
+
+<style>
+  .label {
+    text-align: right;
+    font-weight: 600;
+    /* TODO vertical alignment */
+    vertical-align: middle;  
+  }
+</style>
