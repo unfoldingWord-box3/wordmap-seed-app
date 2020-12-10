@@ -1,7 +1,4 @@
 /node_modules/
 /public/build/
 
-# do not track the docs folder as it is an automatic copy of the build for github pages
-/docs/
-
 .DS_Store
