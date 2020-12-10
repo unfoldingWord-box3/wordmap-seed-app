@@ -19,7 +19,10 @@
   <h2>Suggestions</h2>
   <div>
     {#each predictions[0] as prediction, index (index)}
-      <div title="{prediction.confidence.toFixed(2)}" style="display: inline-block; border: solid; background-color: rgba(0,{(prediction.confidence >= 1) ? 255 : 0},{(prediction.confidence < 1) ? 255 : 0},{prediction.confidence}); padding: 0.2em;">
+      <div
+        title="{prediction.confidence.toFixed(2)}"
+        style="display: inline-block; border: solid; background-color: rgba(0,{(prediction.confidence >= 1) ? 255 : 0},{(prediction.confidence < 1) ? 255 : 0},{prediction.confidence}); padding: 0.2em;"
+      >
         <div>{prediction.alignment.split('->')[0].replace(/:/g, ' ')}</div>
         <div>{prediction.alignment.split('->')[1].replace(/:/g, ' ')}</div>
       </div>
