@@ -4,7 +4,8 @@
   import Suggestions from './components/Suggestions.svelte';
   import { writable } from 'svelte/store';
   import { getData } from './core/data';
-	const data = getData();
+
+  const data = getData();
 
   // export let corpus = [["Guten Tag", "Good day"]];
   // export let alignmentMemory = [["Tag", "day"]];
@@ -40,6 +41,7 @@
 </script>
 
 <div>
+
   <InputForm {source} {target} {sourceCorpus} {targetCorpus} {sourceAlignment} {targetAlignment} />
   <Suggestions suggestions={suggestions} />
 </div>
