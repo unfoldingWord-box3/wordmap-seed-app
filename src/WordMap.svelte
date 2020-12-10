@@ -11,8 +11,8 @@
   export let source = writable(data.source);
   export let target = writable(data.target);
 
-  export let sourceCorpus = writable(data.sourceWords);
-  export let targetCorpus = writable(data.targetWords);
+  export let sourceCorpus = writable(data.source);
+  export let targetCorpus = writable(data.target);
   export let sourceAlignment = writable(data.sourceWords);
   export let targetAlignment = writable(data.targetWords);
   
