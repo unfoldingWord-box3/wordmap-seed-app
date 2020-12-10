@@ -10,10 +10,10 @@
 <table>
   <tr>
     <td class="label">Source: </td>
-    <td><input bind:value={$source} /></td>
+    <td><textarea bind:value={$source} /></td>
 
     <td class="label">Target:</td>
-    <td><input bind:value={$target} /></td>
+    <td><textarea bind:value={$target} /></td>
   </tr>
   <tr>
     <td class="label">Source Corpus:</td>
