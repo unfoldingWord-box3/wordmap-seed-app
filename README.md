@@ -4,6 +4,8 @@ We studied the **javascript framework svelte** and how it compares with our curr
 
 We are going to demonstrate how to *seed* wordmap with an automatically generated vocabulary list for an unaligned language by using svelte to edit and prepare the word list and inject said list into wordmap RCL.					
 
+This project is work in progress. It can be [viewed online](https://unfoldingword-box3.github.io/wordmap-seed-app/) using Github pages.
+
 
 ## License
 
