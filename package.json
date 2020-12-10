@@ -25,7 +25,6 @@
     "react-json-view": "^1.19.1",
     "sirv-cli": "^1.0.0",
     "wordmap": "^0.4.4",
-    "wordmap-lexer": "^0.3.5",
-    "wordmap-react-toolkit": "^0.4.1"
+    "wordmap-lexer": "^0.3.5"
   }
 }

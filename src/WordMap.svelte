@@ -43,12 +43,3 @@
   <InputForm {source} {target} {sourceCorpus} {targetCorpus} {sourceAlignment} {targetAlignment} />
   <Suggestions suggestions={suggestions} />
 </div>
-
-<style>
-  .label {
-    text-align: right;
-    font-weight: 600;
-    /* TODO vertical alignment */
-    vertical-align: middle;  
-  }
-</style>
