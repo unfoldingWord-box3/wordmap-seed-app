@@ -4,12 +4,15 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public"
+    "start": "sirv public",
+    "prettier": "prettier"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^16.0.0",
     "@rollup/plugin-node-resolve": "^10.0.0",
     "alignment-editor-rcl": "0.0.23",
+    "prettier": "^2.2.1",
+    "prettier-plugin-svelte": "^1.4.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "rollup": "^2.3.4",
