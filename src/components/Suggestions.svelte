@@ -1,7 +1,8 @@
 <script>
   export let suggestions = '';
+  let predictions;
 
-  const predictions = suggestions?.map(suggestion => {
+  $: predictions = suggestions?.map(suggestion => {
     return suggestion?.predictions?.map(prediction => {
       const {scores, predictedAlignment} = prediction;
       return {
@@ -11,7 +12,7 @@
     })
   });
 
-  console.log(predictions);
+  $: console.log(predictions);
 </script>
 
 <div>
