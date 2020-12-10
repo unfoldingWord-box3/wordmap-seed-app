@@ -19,3 +19,6 @@ To install this app locally run the following four commands:
     npm install
     npm run dev
 
+To display the app on Github page run: 
+    - moves the build to the docs folder (weird, but that's what Github pages likes)
+    - makes links relative in index.html
