@@ -6,8 +6,8 @@
 
 <main>
 	<h1>Hello WordMap!</h1>
-	<Spreadsheet />
     <WordMap />
+	<Spreadsheet />
     <SpreadsheetDataTester />
 </main>
 
