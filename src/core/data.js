@@ -1,7 +1,7 @@
-const source = `Cette lettre t’est adressée par Paul, serviteur de Dieu et apôtre de Jésus-Christ. Ceux que Dieu a choisis, j’ai été chargé de les conduire dans la foi et la pleine connaissance de la vérité qui est conforme à la piété,`;
-const target = `Paul, a servant of God and an apostle of Jesus Christ, for the faith of the chosen people of God and the knowledge of the truth that agrees with godliness`;
+const source = `Paul, a servant of God and an apostle of Jesus Christ, for the faith of the chosen people of God and the knowledge of the truth that agrees with godliness`;
+const target = `Cette lettre t’est adressée par Paul, serviteur de Dieu et apôtre de Jésus-Christ. Ceux que Dieu a choisis, j’ai été chargé de les conduire dans la foi et la pleine connaissance de la vérité qui est conforme à la piété,`;
 
-const targetWords = `EN
+const sourceWords = `EN
 10
 11
 12
@@ -405,7 +405,7 @@ yourself
 Zenas
 zealous`;
 
-const sourceWords = `FR
+const targetWords = `FR
 dix
 11
 12
