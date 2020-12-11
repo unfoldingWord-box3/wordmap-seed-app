@@ -4,7 +4,9 @@
   import Suggestions from "./components/Suggestions.svelte";
   import { writable } from "svelte/store";
   import { getData } from "./core/data";
+  import { spreadsheetData } from "./stores";
 
+$: console.log( $spreadsheetData );
   const data = getData();
 
   // export let corpus = [["Guten Tag", "Good day"]];
@@ -14,8 +16,11 @@
 
   export let sourceCorpus = writable(data.source);
   export let targetCorpus = writable(data.target);
-  export let sourceAlignment = writable(data.sourceWords);
-  export let targetAlignment = writable(data.targetWords);
+  
+  export let sourceAlignment = writable("");
+  $:        $sourceAlignment = $spreadsheetData?.feed.entry.map( row => row.gsx$source?.$t ).join( '\n' );
+  export let targetAlignment = writable("");
+  $:        $targetAlignment = $spreadsheetData?.feed.entry.map( row => row.gsx$target?.$t ).join( '\n' );
 
   let map;
   let suggestions;
