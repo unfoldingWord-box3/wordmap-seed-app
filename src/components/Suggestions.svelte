@@ -16,7 +16,7 @@
 </script>
 
 <div>
-  <h2>Suggestions</h2>
+  <h2>Suggestion</h2>
   <div>
     {#each predictions[0] as prediction, index (index)}
       <div
