@@ -1,6 +1,8 @@
-For each todo-item that is completed, please replace the `-`or `*` with a `+`.
+For each todo-item that is completed, please replace the `-`or `*` with a `+` and move the item to the end of its list.
 
 A todo-item that starts with a question mark needs clarification or a decision on whether to implement it.
+
+Within each list, sort the items by their priority.
 
 
 # Data
@@ -15,19 +17,27 @@ A todo-item that starts with a question mark needs clarification or a decision o
     * 5-gram word-for-word per language Google translate
     * chunks per language Google translate 
 - ? Enhance the data with synonyms
+- ? Add backtranslations as well
+- ? Get multiple suggestions from Google translate
 
 
 # UI
 - Allow selecting a verse (from say 5 hardcoded verses, or based on a spreadsheet)
-? Use large texts that verses
+- ? Use larger texts than verses
 - Adapt the height of the source and target inputs to fit the text
-- Switch target and source
 - For both corpus and alignment: multiselect with options: Empty, 1-grams, 2-grams, 3-grams, 4-grams, 5-grams, ULT-chunks
 - For corpus: include verse, include book, ? include other translations
 - Save button that stores which fields of the form are selected for re-use in the same session (not persistent)
 - Filter the alignment memory to only show terms actually occurring in the source text
-- Is this `alignment: predictedAlignment?.cachedKey.replace(/n:/g,''),` an error? `/n:/ -> /:/` makes 'an apostle' -> aapostle
 - Click on a suggestion to add it to the alignment memory (meaning it is correct)
+- ? Unaligned text shows up at the bottom rather than the top of the suggestion
+- Indicate when data is being fetched from a SpreadSheet
++ Switch target and source
+
+# Quirks
+- Is this `alignment: predictedAlignment?.cachedKey.replace(/n:/g,''),` an error? `/n:/ -> /:/` makes 'an apostle' -> aapostle
+- ! Why does English to French remove so many of the French words?
+
 
 
 # User story

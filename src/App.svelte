@@ -2,15 +2,16 @@
 	import WordMap from './WordMap.svelte';
 	import Spreadsheet from './components/Spreadsheet.svelte';
 	import SpreadsheetDataTester from './components/SpreadsheetDataTester.svelte';
+	import LanguageTextSelector from './components/LanguageTextSelector.svelte'
 </script>
 
 <main>
 	<h1>Hello WordMap!</h1>
+	<LanguageTextSelector />
     <WordMap />
 	<Spreadsheet />
     <SpreadsheetDataTester />
 </main>
-
 
 <style>
 	main {

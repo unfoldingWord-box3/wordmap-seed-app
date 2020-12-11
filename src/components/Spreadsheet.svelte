@@ -28,6 +28,8 @@ let spreadsheetId = writable("1AHngc0GXgt1RuV0TfoWZkEU6EcGuygb3KeH5MmPfnbQ");
   }
 </script>
 
+<h2>Spreadsheet</h2>
+
 <label for="spreadsheet-id">Spreadsheet ID</label>
 <input
   name="spreadsheet-id"
