@@ -37,7 +37,8 @@ Within each list, sort the items by their priority.
 # Quirks
 - Is this `alignment: predictedAlignment?.cachedKey.replace(/n:/g,''),` an error? `/n:/ -> /:/` makes 'an apostle' -> aapostle
 - ! Why does English to French remove so many of the French words?
-
+- ? Plug in Proskomma
+- ? Plug in tailwindcss
 
 
 # User story

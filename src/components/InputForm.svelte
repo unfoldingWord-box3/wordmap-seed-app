@@ -1,4 +1,6 @@
 <script>
+  import InputFormMultiSelect from './InputFormMultiSelect.svelte'
+
   export let source;
   export let target;
   export let sourceCorpus;
@@ -14,7 +16,6 @@
 
 </script>
 
-<button on:click={switchSourceAndTarget} style="float:right">Switch source and target</button>
 
 <table>
   <tr>
@@ -23,6 +24,9 @@
 
     <td class="label">Target:</td>
     <td><textarea value={$target} on:change={(e)=>{ $target = e.target.value; }} /></td>
+
+    <td><button on:click={switchSourceAndTarget} style="float:right">Switch source and target</button>
+    </td>
   </tr>
   <tr>
     <td class="label">Source Corpus:</td>
@@ -30,6 +34,9 @@
 
     <td class="label">Target Corpus:</td>
     <td><textarea value={$targetCorpus} on:change={(e)=>{ $targetCorpus = e.target.value; }} /></td>
+    <td style="width: 30%;">
+        <InputFormMultiSelect />
+    </td>
   </tr>
   <tr>
     <td class="label">Source Alignment Memory:</td>
@@ -37,6 +44,9 @@
 
     <td class="label">Target Alignment Memory:</td>
     <td><textarea value={$targetAlignment} on:change={(e)=>{ $targetAlignment = e.target.value; }} /></td>
+    <td style="width: 30%;">
+      <InputFormMultiSelect />
+    </td>
   </tr>
 </table>
 
@@ -45,4 +55,5 @@
     text-align: right;
     font-weight: 600;
   }
+
 </style>
