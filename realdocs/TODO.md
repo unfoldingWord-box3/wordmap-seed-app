@@ -6,7 +6,6 @@ Within each list, sort the items by their priority.
 
 
 # Data
-- Change the French translation to a more literal one
 - Generate all base data:
     * select 5 verses
     * the entire book line by line per translation
@@ -15,7 +14,8 @@ Within each list, sort the items by their priority.
     * 3-gram word-for-word per language Google translate
     * 4-gram word-for-word per language Google translate
     * 5-gram word-for-word per language Google translate
-    * chunks per language Google translate 
+    * ? phrases per language Google translate 
+- Change the French translation to a more literal one (for instance LSG)
 - ? Enhance the data with synonyms
 - ? Add backtranslations as well
 - ? Get multiple suggestions from Google translate
@@ -23,22 +23,22 @@ Within each list, sort the items by their priority.
 
 # UI
 - Allow selecting a verse (from say 5 hardcoded verses, or based on a spreadsheet)
+- Link the UI to the actual data selection
+- ? Filter the alignment memory to only show terms actually occurring in the source text
+- ? Adapt the height of the source and target inputs to fit the text
+- ? Indicate when data is being fetched from a SpreadSheet
+- ? Save button that stores which fields of the form are selected for re-use in the same session (not persistent)
 - ? Use larger texts than verses
-- Adapt the height of the source and target inputs to fit the text
-- For both corpus and alignment: multiselect with options: Empty, 1-grams, 2-grams, 3-grams, 4-grams, 5-grams, ULT-chunks
-- For corpus: include verse, include book, ? include other translations
-- Save button that stores which fields of the form are selected for re-use in the same session (not persistent)
-- Filter the alignment memory to only show terms actually occurring in the source text
-- Click on a suggestion to add it to the alignment memory (meaning it is correct)
-- Indicate when data is being fetched from a SpreadSheet
+- ? Click on a suggestion to add it to the alignment memory (meaning it is correct)
++ For both corpus and alignment: multiselect with options: Empty, 1-grams, 2-grams, 3-grams, 4-grams, 5-grams, ULT-chunks
 + Unaligned text shows up at the bottom rather than the top of the suggestion
 + Switch target and source
 
 # Quirks
 - Is this `alignment: predictedAlignment?.cachedKey.replace(/n:/g,''),` an error? `/n:/ -> /:/` makes 'an apostle' -> aapostle
-- ! Why does English to French remove so many of the French words?
 - ? Plug in Proskomma
 - ? Plug in tailwindcss
++  Why does English to French remove so many of the French words?
 
 
 # User story
