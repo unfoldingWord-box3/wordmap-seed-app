@@ -1,5 +1,5 @@
 const source = `Cette lettre t’est adressée par Paul, serviteur de Dieu et apôtre de Jésus-Christ. Ceux que Dieu a choisis, j’ai été chargé de les conduire dans la foi et la pleine connaissance de la vérité qui est conforme à la piété,`;
-const target = `This letter is addressed to you by Paul, a servant of God and an apostle of Jesus Christ. Those whom God has chosen, I was responsible for driving them in the faith and the full knowledge of the truth that is consistent with godliness,`;
+const target = `Paul, a servant of God and an apostle of Jesus Christ, for the faith of the chosen people of God and the knowledge of the truth that agrees with godliness`;
 
 const targetWords = `EN
 10
@@ -810,10 +810,10 @@ zenas
 zélé`;
 
 export const getData = () => {
-  return {
-    source,
-    target,
-    sourceWords,
-    targetWords,
-  };
+    return {
+        source,
+        target,
+        sourceWords,
+        targetWords,
+    };
 };
