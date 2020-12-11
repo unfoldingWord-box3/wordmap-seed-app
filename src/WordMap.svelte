@@ -6,7 +6,6 @@
   import { getData } from "./core/data";
   import { spreadsheetData } from "./stores";
 
-$: console.log( $spreadsheetData );
   const data = getData();
 
   // export let corpus = [["Guten Tag", "Good day"]];
@@ -16,11 +15,22 @@ $: console.log( $spreadsheetData );
 
   export let sourceCorpus = writable(data.source);
   export let targetCorpus = writable(data.target);
-  
+
+  export let dataChoiceAlignment = writable([]);
   export let sourceAlignment = writable("");
-  $:        $sourceAlignment = $spreadsheetData?.feed.entry.map( row => row.gsx$source?.$t ).join( '\n' );
   export let targetAlignment = writable("");
-  $:        $targetAlignment = $spreadsheetData?.feed.entry.map( row => row.gsx$target?.$t ).join( '\n' );
+
+  $: {
+    $sourceAlignment = $spreadsheetData?.feed.entry
+    .filter(row => $dataChoiceAlignment.map(choice => choice.value).includes(row['gsx$n-grams'].$t))
+    .map( row => row.gsx$source?.$t )
+    .join( '\n' );
+
+    $targetAlignment = $spreadsheetData?.feed.entry
+    .filter(row => $dataChoiceAlignment.map(choice => choice.value).includes(row['gsx$n-grams'].$t))
+    .map( row => row.gsx$target?.$t )
+    .join( '\n' );
+  };
 
   let map;
   let suggestions;
@@ -54,6 +64,8 @@ $: console.log( $spreadsheetData );
     {sourceCorpus}
     {targetCorpus}
     {sourceAlignment}
-    {targetAlignment} />
+    {targetAlignment}
+    {dataChoiceAlignment}
+  />
   <Suggestions {suggestions} />
 </div>

@@ -1,19 +1,18 @@
 <script>
     export let name;
-    export let dataChoicesMemory = [
-        { id: 1, text: 'No data'},
-        { id: 2, text: '1-grams'}, 
-        { id: 3, text: '2-grams'}, 
-        { id: 4, text: '3-grams'}, 
+    export let dataChoicesAlignment = [
+        { id: 1, text: 'unigrams', value: '1' }, 
+        { id: 2, text: 'bigrams', value: '2' }, 
+        { id: 3, text: 'trigrams', value: '3' }, 
     ];
-    export let dataIdsMemory = [2];
-    export let dataChoiceMemory;
-    $: $dataChoiceMemory = dataChoicesMemory.filter(choice => dataIdsMemory.includes(choice.id));
+    export let dataIdsAlignment = [1];
+    export let dataChoiceAlignment;
+    $: $dataChoiceAlignment = dataChoicesAlignment.filter(choice => dataIdsAlignment.includes(choice.id));
 </script>
 
 <div style="float: right">
-    <select multiple bind:value="{dataIdsMemory}" id="{name}">
-        {#each dataChoicesMemory as choice }
+    <select multiple bind:value="{dataIdsAlignment}" id="{name}">
+        {#each dataChoicesAlignment as choice }
             <option value="{choice.id}">{choice.text}</option>
         {/each}
     </select>
