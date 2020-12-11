@@ -30,8 +30,8 @@ Within each list, sort the items by their priority.
 - Save button that stores which fields of the form are selected for re-use in the same session (not persistent)
 - Filter the alignment memory to only show terms actually occurring in the source text
 - Click on a suggestion to add it to the alignment memory (meaning it is correct)
-- ? Unaligned text shows up at the bottom rather than the top of the suggestion
 - Indicate when data is being fetched from a SpreadSheet
++ Unaligned text shows up at the bottom rather than the top of the suggestion
 + Switch target and source
 
 # Quirks

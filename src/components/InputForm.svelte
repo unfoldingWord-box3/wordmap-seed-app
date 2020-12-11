@@ -1,5 +1,8 @@
 <script>
-  import InputFormMultiSelect from './InputFormMultiSelect.svelte'
+  import { writable } from "svelte/store";
+
+  import MultiSelectMemory from "./MultiSelectMemory.svelte";
+  import MultiSelectCorpus from './MultiSelectCorpus.svelte'
 
   export let source;
   export let target;
@@ -7,6 +10,12 @@
   export let targetCorpus;
   export let sourceAlignment;
   export let targetAlignment;
+  
+  let dataChoiceMemory = writable([]);
+  $: console.log($dataChoiceMemory)
+
+  let dataChoiceCorpus = writable([]);
+  $: console.log($dataChoiceCorpus)
 
   function switchSourceAndTarget () {
     [$target, $source] = [$source, $target];
@@ -35,7 +44,7 @@
     <td class="label">Target Corpus:</td>
     <td><textarea value={$targetCorpus} on:change={(e)=>{ $targetCorpus = e.target.value; }} /></td>
     <td style="width: 30%;">
-        <InputFormMultiSelect />
+        <MultiSelectCorpus name="corpus" {dataChoiceCorpus}/>
     </td>
   </tr>
   <tr>
@@ -45,7 +54,7 @@
     <td class="label">Target Alignment Memory:</td>
     <td><textarea value={$targetAlignment} on:change={(e)=>{ $targetAlignment = e.target.value; }} /></td>
     <td style="width: 30%;">
-      <InputFormMultiSelect />
+      <MultiSelectMemory name="memory" {dataChoiceMemory} />
     </td>
   </tr>
 </table>
