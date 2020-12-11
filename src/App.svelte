@@ -2,11 +2,10 @@
 	import WordMap from './WordMap.svelte';
 	import Spreadsheet from './components/Spreadsheet.svelte';
 	import SpreadsheetDataTester from './components/SpreadsheetDataTester.svelte';
-	export let name;
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
+	<h1>Hello WordMap!</h1>
 	<Spreadsheet />
     <WordMap />
     <SpreadsheetDataTester />
