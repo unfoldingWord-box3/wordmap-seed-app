@@ -2,6 +2,7 @@ For each todo-item that is completed, please replace the `-`or `*` with a `+`.
 
 A todo-item that starts with a question mark needs clarification or a decision on whether to implement it.
 
+
 # Data
 - Change the French translation to a more literal one
 - Generate all base data:
@@ -25,6 +26,8 @@ A todo-item that starts with a question mark needs clarification or a decision o
 - For corpus: include verse, include book, ? include other translations
 - Save button that stores which fields of the form are selected for re-use in the same session (not persistent)
 - Filter the alignment memory to only show terms actually occurring in the source text
+- Is this `alignment: predictedAlignment?.cachedKey.replace(/n:/g,''),` an error? `/n:/ -> /:/` makes 'an apostle' -> aapostle
+- Click on a suggestion to add it to the alignment memory (meaning it is correct)
 
 
 # User story
@@ -38,3 +41,5 @@ the suggestions based on an external source of data.
     * [mt-memory-alignment-1] Align with both as a corpus *and* as memory the unigrams extracted from Google translate
     * [mt-memory-alignment-1-5] Align with both as a corpus *and* as memory the 1-to-5grams extracted from Google translate
     * [chunked-mt-memory-alignment] Align with both as corpus *and* as memory the chunks of the aligned ULT extracted from Google translate
+
+

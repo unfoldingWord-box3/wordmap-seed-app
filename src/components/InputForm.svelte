@@ -5,7 +5,16 @@
   export let targetCorpus;
   export let sourceAlignment;
   export let targetAlignment;
+
+  function switchSourceAndTarget () {
+    [$target, $source] = [$source, $target];
+    [$targetCorpus, $sourceCorpus] = [$sourceCorpus, $targetCorpus];
+    [$targetAlignment, $sourceAlignment] = [$sourceAlignment, $targetAlignment];
+  }
+
 </script>
+
+<button on:click={switchSourceAndTarget} style="float:right">Switch source and target</button>
 
 <table>
   <tr>
@@ -35,7 +44,5 @@
   .label {
     text-align: right;
     font-weight: 600;
-    /* TODO vertical alignment */
-    vertical-align: middle;  
   }
 </style>
