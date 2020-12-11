@@ -22,12 +22,12 @@
 
   $: {
     $sourceAlignment = $spreadsheetData?.feed.entry
-    .filter(row => $dataChoiceAlignment.map(choice => choice.value).includes(row['gsx$n-grams'].$t))
+    .filter(row => $dataChoiceAlignment.map(choice => choice.value).includes(row['gsx$n-grams']?.$t))
     .map( row => row.gsx$source?.$t )
     .join( '\n' );
 
     $targetAlignment = $spreadsheetData?.feed.entry
-    .filter(row => $dataChoiceAlignment.map(choice => choice.value).includes(row['gsx$n-grams'].$t))
+    .filter(row => $dataChoiceAlignment.map(choice => choice.value).includes(row['gsx$n-grams']?.$t))
     .map( row => row.gsx$target?.$t )
     .join( '\n' );
   };

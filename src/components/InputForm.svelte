@@ -1,8 +1,12 @@
 <script>
+  import {
+    Button,
+  } from "smelte";
   import { writable } from "svelte/store";
+  import { TextField } from "smelte";
 
   import MultiSelectMemory from "./MultiSelectMemory.svelte";
-  import MultiSelectCorpus from './MultiSelectCorpus.svelte'
+  import MultiSelectCorpus from './MultiSelectCorpus.svelte';
 
   export let source;
   export let target;
@@ -26,42 +30,22 @@
 </script>
 
 
-<table>
-  <tr>
-    <td class="label">Source: </td>
-    <td><textarea value={$source} on:change={(e)=>{ $source = e.target.value; }} /></td>
-
-    <td class="label">Target:</td>
-    <td><textarea value={$target} on:change={(e)=>{ $target = e.target.value; }} /></td>
-
-    <td><button on:click={switchSourceAndTarget} style="float:right">Switch source and target</button>
-    </td>
-  </tr>
-  <tr>
-    <td class="label">Source Corpus:</td>
-    <td><textarea value={$sourceCorpus} on:change={(e)=>{ $sourceCorpus = e.target.value; }} /></td>
-
-    <td class="label">Target Corpus:</td>
-    <td><textarea value={$targetCorpus} on:change={(e)=>{ $targetCorpus = e.target.value; }} /></td>
-    <td style="width: 30%;">
-        <MultiSelectCorpus name="corpus" {dataChoiceCorpus}/>
-    </td>
-  </tr>
-  <tr>
-    <td class="label">Source Alignment Memory:</td>
-    <td><textarea value={$sourceAlignment} on:change={(e)=>{ $sourceAlignment = e.target.value; }} /></td>
-
-    <td class="label">Target Alignment Memory:</td>
-    <td><textarea value={$targetAlignment} on:change={(e)=>{ $targetAlignment = e.target.value; }} /></td>
-    <td style="width: 30%;">
-      <MultiSelectMemory name="memory" {dataChoiceAlignment} />
-    </td>
-  </tr>
-</table>
-
-<style>
-  .label {
-    text-align: right;
-    font-weight: 600;
-  }
-</style>
+<div>
+  <div class="flex space-x-4" style="width: 100%">
+    <TextField label="Source" outlined textarea value={$source} on:change={(e)=>{ $source = e.target.value; }} />
+    <TextField label="Target" outlined textarea value={$target} on:change={(e)=>{ $target = e.target.value; }} />
+    <div class="py-2">
+      <Button outlined color="secondary" on:click={switchSourceAndTarget}>Switch source and target</Button>
+    </div>
+  </div>
+  <div class="flex space-x-4">
+    <TextField label="Source Corpus" outlined textarea value={$sourceCorpus} on:change={(e)=>{ $sourceCorpus = e.target.value; }} />
+    <TextField label="Target Corpus" outlined textarea value={$targetCorpus} on:change={(e)=>{ $targetCorpus = e.target.value; }} />
+    <MultiSelectCorpus name="corpus" {dataChoiceCorpus}/>
+  </div>
+  <div class="flex space-x-4">
+    <TextField label="Source Alignment Memory" outlined textarea value={$sourceAlignment} on:change={(e)=>{ $sourceAlignment = e.target.value; }} />
+    <TextField label="Target Alignment Memory" outlined textarea value={$targetAlignment} on:change={(e)=>{ $targetAlignment = e.target.value; }} />
+    <MultiSelectMemory name="memory" {dataChoiceAlignment} />
+  </div>
+</div>

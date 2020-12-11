@@ -11,7 +11,7 @@
 </script>
 
 <div style="float: right">
-    <select multiple bind:value="{dataIdsAlignment}" id="{name}">
+    <select label="asdf" outlined multiple bind:value="{dataIdsAlignment}" id="{name}">
         {#each dataChoicesAlignment as choice }
             <option value="{choice.id}">{choice.text}</option>
         {/each}

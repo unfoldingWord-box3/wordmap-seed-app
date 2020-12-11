@@ -1,4 +1,5 @@
 <script>
+	import "smelte/src/tailwind.css";
 	import WordMap from './WordMap.svelte';
 	import Spreadsheet from './components/Spreadsheet.svelte';
 	import SpreadsheetDataTester from './components/SpreadsheetDataTester.svelte';
@@ -14,23 +15,13 @@
 </main>
 
 <style>
-	main {
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		text-align: center;
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
 	@media (min-width: 640px) {
 		main {
 			max-width: none;
 		}
+	}
+
+	main {
+		padding-left: 1em;
 	}
 </style>

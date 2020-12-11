@@ -19,9 +19,9 @@
   <h2>Suggestion</h2>
   <div>
     {#each predictions[0] as prediction, index (index)}
-      <div
+      <div class="rounded-xl"
         title="{prediction.confidence.toFixed(2)}"
-        style="display: inline-block; border: solid; background-color: rgba(0,{(prediction.confidence >= 1) ? 255 : 0},{(prediction.confidence < 1) ? 255 : 0},{prediction.confidence}); padding: 0.2em;"
+        style="display: inline-block; border: 1px solid grey; background-color: rgba(0,{(prediction.confidence >= 1) ? 255 : 0},{(prediction.confidence < 1) ? 255 : 0},{prediction.confidence}); padding: 0 0.5em;"
       >
         <div>{prediction.alignment.split('->')[0].replace(/:/g, ' ')}</div>
         <div>

@@ -1,4 +1,5 @@
 <script>
+    import { Select } from "smelte";
     let languages = ['French', 'Hindi', 'Russian'];
     let language = languages[0];
 
@@ -23,29 +24,6 @@
 </script>
 
 <div class="container">
-    <form id="language">
-        <!-- svelte-ignore a11y-no-onchange -->
-        <select id="language" bind:value={language} on:change={setLanguage}>   
-            {#each languages as lang}
-                <option value={lang} type="button">{lang}</option>
-            {/each}
-        </select>
-    </form>
-
-    <form id="text">
-        <!-- svelte-ignore a11y-no-onchange -->
-        <select id="language" bind:value={sample} on:change={setSample}>   
-            {#each samples as samp}
-                <option value={samp} type="button">{samp}</option>
-            {/each}
-        </select>
-    </form>
+    <Select label="language" bind:value={language} outlined items={languages} />
+    <Select label="sample" bind:value={sample} outlined items={samples} />
 </div>
-
-
-<style>
-    .container{
-        text-align: center;
-        padding-bottom: 3em;
-    }
-</style>

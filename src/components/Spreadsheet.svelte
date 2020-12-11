@@ -1,4 +1,5 @@
 <script>
+  import { TextField } from "smelte";
   import { writable } from "svelte/store";
   import { spreadsheetData } from "../stores";
 //  import fetchSpreadsheet from "../core/fetchSpreadsheet";
@@ -30,17 +31,15 @@ let spreadsheetId = writable("1AHngc0GXgt1RuV0TfoWZkEU6EcGuygb3KeH5MmPfnbQ");
 
 <h2>Spreadsheet</h2>
 
-<label for="spreadsheet-id">Spreadsheet ID</label>
-<input
-  name="spreadsheet-id"
+<TextField
+  label="spreadsheet-id"
   value={$spreadsheetId}
   on:change={(e) => {
     $spreadsheetId = e.target.value;
   }} />
 
-<label for="spreadsheet-page">Spreadsheet Page</label>
-<input
-  name="spreadsheet-page"
+<TextField
+  label="spreadsheet-page"
   value={$spreadsheetPage}
   on:change={(e) => {
     $spreadsheetPage = e.target.value;
