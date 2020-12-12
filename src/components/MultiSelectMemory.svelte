@@ -1,19 +1,31 @@
 <script>
-    export let name;
-    export let dataChoicesAlignment = [
-        { id: 1, text: 'unigrams', value: '1' }, 
-        { id: 2, text: 'bigrams', value: '2' }, 
-        { id: 3, text: 'trigrams', value: '3' }, 
+    import { Select, Checkbox } from 'smelte';
+
+    export let items = [
+        { value: '1', text: 'unigrams', checked: true }, 
+        { value: '2', text: 'bigrams' }, 
+        { value: '3', text: 'trigrams' }, 
     ];
-    export let dataIdsAlignment = [1];
     export let dataChoiceAlignment;
-    $: $dataChoiceAlignment = dataChoicesAlignment.filter(choice => dataIdsAlignment.includes(choice.id));
+    $: $dataChoiceAlignment = items.filter(item => item.checked);
+
+    $: selectedLabel = items.filter(item => item.checked).map(item => item.text).join(", ");
 </script>
 
-<div style="float: right">
-    <select label="asdf" outlined multiple bind:value="{dataIdsAlignment}" id="{name}">
-        {#each dataChoicesAlignment as choice }
-            <option value="{choice.id}">{choice.text}</option>
-        {/each}
-    </select>
+<Select
+    {selectedLabel}
+    label='Alignment Selection'
+    outlined
+    color="secondary"
+    {items}
+>
+<div slot="options" class="elevation-3 rounded px-2 py-4 mt-0" on:click|stopPropagation>
+  {#each items as item, index}
+    <Checkbox
+      bind:checked={items[index].checked}
+      color="secondary"
+      label={item.text}
+    />
+  {/each}
 </div>
+</Select>

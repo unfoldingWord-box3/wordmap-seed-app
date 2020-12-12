@@ -1,24 +1,33 @@
 <script>
-    export let name;
-    export let dataChoicesCorpus = [
-        { id: 1, value: 'line', text: 'Line'}, 
-        { id: 2, value: 'book', text: 'Entire book'}, 
-        { id: 3, value: '1', text: 'unigrams'}, 
-        { id: 4, value: '2', text: 'bigrams'}, 
-        { id: 5, value: '3', text: 'trigrams'}, 
-        { id: 6, value: '4', text: 'quadgrams'}, 
-        { id: 7, value: '5', text: 'quintgrams'}
-        // { id: 9, text: 'ULT phrases'}
+    import { Select, Checkbox } from "smelte";
+
+    export let items = [
+        { value: 'line', text: 'Line'}, 
+        { value: 'book', text: 'Entire book', checked: true }, 
+        { value: '1', text: 'unigrams'}, 
+        { value: '2', text: 'bigrams'}, 
+        { value: '3', text: 'trigrams'}, 
+        { value: '4', text: 'quadgrams'}, 
+        { value: '5', text: 'quintgrams'}
     ];
-    export let dataIdsCorpus = [2];
-    export let dataChoiceCorpus;
-    $: $dataChoiceCorpus = dataChoicesCorpus.filter(choice => dataIdsCorpus.includes(choice.id));
+
+    $: selectedLabel = items.filter(item => item.checked).map(item => item.text).join(", ");
 </script>
 
-<div style="float: right">
-    <select multiple bind:value="{dataIdsCorpus}" id="{name}">
-        {#each dataChoicesCorpus as choice }
-            <option value="{choice.id}">{choice.text}</option>
-        {/each}
-    </select>
-</div>
+<Select
+  {selectedLabel}
+  label='Corpus Selection'
+  outlined
+  color="secondary"
+  {items}
+>
+  <div slot="options" class="elevation-3 rounded px-2 py-4 mt-0" on:click|stopPropagation>
+      {#each items as item, index}
+        <Checkbox
+          bind:checked={items[index].checked}
+          color="secondary"
+          label={item.text}
+        />
+      {/each}
+  </div>
+</Select>
