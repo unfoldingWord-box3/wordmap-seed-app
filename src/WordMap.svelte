@@ -4,7 +4,7 @@
   import Suggestions from "./components/Suggestions.svelte";
   import { writable } from "svelte/store";
   import { getData } from "./core/data";
-  import { spreadsheetData } from "./stores";
+  import { spreadsheetData, sourceCorpus, targetCorpus } from "./stores";
 
   const data = getData();
 
@@ -13,9 +13,6 @@
   export let source = writable(data.source);
   export let target = writable(data.target);
 
-  export let sourceCorpus = writable(data.source);
-  export let targetCorpus = writable(data.target);
-
   export let dataChoiceAlignment = writable([]);
   export let sourceAlignment = writable("");
   export let targetAlignment = writable("");
@@ -23,13 +20,13 @@
   $: {
     $sourceAlignment = $spreadsheetData?.feed.entry
     .filter(row => $dataChoiceAlignment.map(choice => choice.value).includes(row['gsx$n-grams']?.$t))
-    .map( row => row.gsx$source?.$t )
-    .join( '\n' );
+    .map(row => row.gsx$source?.$t )
+    .join('\n');
 
     $targetAlignment = $spreadsheetData?.feed.entry
     .filter(row => $dataChoiceAlignment.map(choice => choice.value).includes(row['gsx$n-grams']?.$t))
-    .map( row => row.gsx$target?.$t )
-    .join( '\n' );
+    .map(row => row.gsx$target?.$t )
+    .join('\n');
   };
 
   let map;
