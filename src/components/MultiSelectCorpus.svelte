@@ -1,14 +1,13 @@
 <script>
     export let name;
     export let dataChoicesCorpus = [
-        { id: 1, text: 'No data'},
-        { id: 2, text: 'Include the line'}, 
-        { id: 3, text: 'Entire book'}, 
-        { id: 4, text: '1-grams'}, 
-        { id: 5, text: '2-grams'}, 
-        { id: 6, text: '3-grams'}, 
-        { id: 7, text: '4-grams'}, 
-        { id: 8, text: '5-grams'}
+        { id: 1, value: 'line', text: 'Line'}, 
+        { id: 2, value: 'book', text: 'Entire book'}, 
+        { id: 3, value: '1', text: 'unigrams'}, 
+        { id: 4, value: '2', text: 'bigrams'}, 
+        { id: 5, value: '3', text: 'trigrams'}, 
+        { id: 6, value: '4', text: 'quadgrams'}, 
+        { id: 7, value: '5', text: 'quintgrams'}
         // { id: 9, text: 'ULT phrases'}
     ];
     export let dataIdsCorpus = [2];
