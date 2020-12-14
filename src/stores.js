@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store';
 
 export const spreadsheetData = writable(null);
-export const sourceCorpus = writable("");
-export const targetCorpus = writable("");
+export let sourceCorpusSheet = writable([]);
+export let targetCorpusSheet = writable([]);

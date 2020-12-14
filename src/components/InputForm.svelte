@@ -16,10 +16,7 @@
   export let targetAlignment;
   
   export let dataChoiceAlignment;
-  // $: console.log($dataChoiceMemory);
-
-  let dataChoiceCorpus = writable([]);
-  // $: console.log($dataChoiceCorpus);
+  export let dataChoiceCorpus;
 
   function switchSourceAndTarget () {
     [$target, $source] = [$source, $target];
@@ -41,7 +38,7 @@
   <div class="flex space-x-4">
     <TextField label="Source Corpus" outlined textarea value={$sourceCorpus} on:change={(e)=>{ $sourceCorpus = e.target.value; }} />
     <TextField label="Target Corpus" outlined textarea value={$targetCorpus} on:change={(e)=>{ $targetCorpus = e.target.value; }} />
-    <MultiSelectCorpus name="corpus" {dataChoiceCorpus}/>
+    <MultiSelectCorpus name="corpus" {dataChoiceCorpus} />
   </div>
   <div class="flex space-x-4">
     <TextField label="Source Alignment Memory" outlined textarea value={$sourceAlignment} on:change={(e)=>{ $sourceAlignment = e.target.value; }} />
