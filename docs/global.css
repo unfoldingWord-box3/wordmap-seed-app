@@ -3,11 +3,11 @@
 
 
 
-@-webkit-keyframes svelte-1xkiyez-rotate{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@keyframes svelte-1xkiyez-rotate{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@-webkit-keyframes svelte-1xkiyez-dash{to{stroke-dasharray:89,200;stroke-dashoffset:-124}}@keyframes svelte-1xkiyez-dash{0%{stroke-dasharray:1,200;stroke-dashoffset:0}50%{stroke-dasharray:89,200;stroke-dashoffset:-35}to{stroke-dasharray:89,200;stroke-dashoffset:-124}}
 @-webkit-keyframes svelte-mguqwa-increase{to{left:130%;width:150%}}@keyframes svelte-mguqwa-increase{0%{left:-5%;width:5%}to{left:130%;width:150%}}@-webkit-keyframes svelte-mguqwa-decrease{to{left:110%;width:10%}}@keyframes svelte-mguqwa-decrease{0%{left:-90%;width:90%}to{left:110%;width:10%}}
+@-webkit-keyframes svelte-1xkiyez-rotate{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@keyframes svelte-1xkiyez-rotate{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@-webkit-keyframes svelte-1xkiyez-dash{to{stroke-dasharray:89,200;stroke-dashoffset:-124}}@keyframes svelte-1xkiyez-dash{0%{stroke-dasharray:1,200;stroke-dashoffset:0}50%{stroke-dasharray:89,200;stroke-dashoffset:-35}to{stroke-dasharray:89,200;stroke-dashoffset:-124}}
+
 
 label.text-xs{font-size:.7rem}
-
 
 
 .ripple.svelte-1o8z87d{position:absolute!important}
