@@ -2,12 +2,21 @@
   import {
     Button,
   } from "smelte";
-  import { writable } from "svelte/store";
+  import { language, languageSwap } from "../stores";
   import { TextField } from "smelte";
 
   import MultiSelectMemory from "./MultiSelectMemory.svelte";
   import MultiSelectCorpus from './MultiSelectCorpus.svelte';
 
+  let _source = "Paul, a servant of God and an apostle of Jesus Christ, for the faith of the chosen people of God and the knowledge of the truth that agrees with godliness";
+
+  const targets = {
+    French: "Paul, serviteur de Dieu, et apôtre de Jésus-Christ pour la foi des élus de Dieu et la connaissance de la vérité qui est selon la piété,",
+    Hindi: "पौलुस की ओर से, जो परमेश्‍वर का दास और यीशु मसीह का प्रेरित है, परमेश्‍वर के चुने हुए लोगों के विश्वास को स्थापित करने और सच्चाई का ज्ञान स्थापित करने के लिए जो भक्ति के साथ सहमत हैं,",
+    Russian: "Павел, раб Божий, Апостол же Иисуса Христа, по вере избранных Божиих и познанию истины, относящейся к благочестию,",
+  };
+
+  
   export let source;
   export let target;
   export let sourceCorpus;
@@ -18,12 +27,14 @@
   export let dataChoiceAlignment;
   export let dataChoiceCorpus;
 
+  $: $target = targets[$language];
+
+  
   function switchSourceAndTarget () {
-    [$target, $source] = [$source, $target];
-    [$targetCorpus, $sourceCorpus] = [$sourceCorpus, $targetCorpus];
+    $languageSwap = !$languageSwap;
+    [$source, $target] = [$target, $source];
     [$targetAlignment, $sourceAlignment] = [$sourceAlignment, $targetAlignment];
   }
-
 </script>
 
 

@@ -4,10 +4,12 @@
   import Suggestions from "./components/Suggestions.svelte";
   import { writable } from "svelte/store";
   import { getData } from "./core/data";
-  import { spreadsheetData, sourceCorpusSheet, targetCorpusSheet } from "./stores";
-  import fetchSheet from './core/fetchSpreadsheet';
-
-  // import fetchSheet from './components/Spreadsheet.svelte'
+  import {
+    spreadsheetData,
+    sourceCorpusSheet,
+    targetCorpusSheet,
+    languageSwap,
+  } from "./stores";
 
   const data = getData();
 
@@ -36,6 +38,10 @@
     .join('\n');
   };
 
+  let sourceBookCorpus, targetBookCorpus;
+  $: sourceBookCorpus = $sourceCorpusSheet?.feed?.entry.map( row => row.gsx$text?.$t );
+  $: targetBookCorpus = $targetCorpusSheet?.feed?.entry.map( row => row.gsx$text?.$t );
+
   $: {
     // use a tmp variable to avoid updating the store all the time
     // this avoids an infinite loop
@@ -43,39 +49,30 @@
     let _targetCorpus = [];
     
     if($dataChoiceCorpus.map(a => a.value).indexOf('line') !== -1) {
-      console.log('Line selected');
-      _sourceCorpus.push($source);
-      _targetCorpus.push($target);
+      _sourceCorpus = [..._sourceCorpus, $source];
+      _targetCorpus = [..._targetCorpus, $target];
     };
-    // console.log('_sourceCorpus');
 
     if($dataChoiceCorpus.map(a => a.value).indexOf('book') !== -1) {
-      console.log('Book selected');
-      // _sourceCorpus = [..._sourceCorpus, $sourceCorpusSheet?.feed.entry.map( row => row.gsx$text?.$t )];
-      // _targetCorpus = [..._targetCorpus, $targetCorpusSheet?.feed.entry.map( row => row.gsx$text?.$t )];
-
-      const sourceBookCorpus = $sourceCorpusSheet?.feed.entry.map( row => row.gsx$text?.$t );
-      const targetBookCorpus = $targetCorpusSheet?.feed.entry.map( row => row.gsx$text?.$t );
-      
       if (sourceBookCorpus && targetBookCorpus) {
-        _sourceCorpus = [..._sourceCorpus, ...sourceBookCorpus ];
-        _targetCorpus = [..._targetCorpus, ...targetBookCorpus ];
+        _sourceCorpus = [..._sourceCorpus, ...($languageSwap ? targetBookCorpus : sourceBookCorpus) ];
+        _targetCorpus = [..._targetCorpus, ...($languageSwap ? sourceBookCorpus : targetBookCorpus) ];
       };
     };
     
     const sourceNgrams = $spreadsheetData?.feed.entry
       .filter(row => $dataChoiceCorpus.map(choice => choice.value).includes(row['gsx$n-grams']?.$t))
-      .map(row => row.gsx$source?.$t );
+      .map(row => $languageSwap ? row.gsx$target?.$t : row.gsx$source?.$t );
 
     if (sourceNgrams) _sourceCorpus = [..._sourceCorpus, ...sourceNgrams];
     
     const targetNgrams = $spreadsheetData?.feed.entry
     .filter(row => $dataChoiceCorpus.map(choice => choice.value).includes(row['gsx$n-grams']?.$t))
-    .map(row => row.gsx$target?.$t );
+    .map(row => $languageSwap ? row.gsx$source?.$t : row.gsx$target?.$t );
     if (targetNgrams) _targetCorpus = [..._targetCorpus, ...targetNgrams];
     
-    $sourceCorpus = _sourceCorpus.join('\n')
-    $targetCorpus = _targetCorpus.join('\n')
+    $sourceCorpus = _sourceCorpus.join('\n');
+    $targetCorpus = _targetCorpus.join('\n');
 
     // uncomment this basic fallback in case the Google API abandons us
     // if (!$sourceCorpus) { $sourceCorpus = $source; };

@@ -5,7 +5,7 @@
   $: predictions = suggestions?.map(suggestion => {
     return suggestion?.predictions?.map(prediction => {
       const {scores, predictedAlignment} = prediction;
-      console.log('predictedA', predictedAlignment);
+      // console.log('predictedA', predictedAlignment);
       return {
         confidence: scores?.confidence,
         alignment: predictedAlignment?.cachedKey.replace(/^n:/g,''),
