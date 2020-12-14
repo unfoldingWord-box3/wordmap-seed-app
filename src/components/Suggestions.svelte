@@ -8,7 +8,7 @@
       // console.log('predictedA', predictedAlignment);
       return {
         confidence: scores?.confidence,
-        alignment: predictedAlignment?.cachedKey.replace(/^n:/g,''),
+        alignment: predictedAlignment?.cachedKey.replace(/n:/g,''),
       }
     })
   });
