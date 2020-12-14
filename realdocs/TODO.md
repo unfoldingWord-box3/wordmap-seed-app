@@ -45,7 +45,7 @@ Within each list, sort the items by their priority.
 The overall goal is to simplify alignment for untrained aligners by improving 
 the suggestions based on an external source of data.
 
-- Define the steps of exploring the effect of external data on the alignment
+- Define the steps gof exploring the effect of external data on the alignment
     * [no alignment] Align without a) corpus and b) without memory 
     * [base-alignment] Align with a) as corpus the text itself b) without memory
     * [base-book-alignment] Align with a) as corpus the entire book b) without memory
