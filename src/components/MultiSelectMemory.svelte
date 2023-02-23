@@ -2,9 +2,7 @@
     import { Select, Checkbox } from 'smelte';
 
     export let items = [
-        { value: '1', text: 'unigrams', checked: true }, 
-        { value: '2', text: 'bigrams' }, 
-        { value: '3', text: 'trigrams' }, 
+        { value: '1', text: 'Proper Nouns', checked: true },
     ];
     export let dataChoiceAlignment;
     $: $dataChoiceAlignment = items.filter(item => item.checked);

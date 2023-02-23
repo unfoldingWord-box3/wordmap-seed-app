@@ -4,11 +4,7 @@
     export let items = [
         { value: 'line', text: 'Line'}, 
         { value: 'book', text: 'Entire book' }, 
-        { value: '1', text: 'unigrams',}, 
-        { value: '2', text: 'bigrams'}, 
-        { value: '3', text: 'trigrams'}, 
-        { value: '4', text: 'quadgrams'}, 
-        { value: '5', text: 'quintgrams'}
+        { value: '1', text: 'Proper Nouns',}, 
     ];
     export let dataChoiceCorpus;
     $: $dataChoiceCorpus = items.filter(item => item.checked);

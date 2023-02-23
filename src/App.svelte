@@ -1,7 +1,6 @@
 <script>
   import "smelte/src/tailwind.css";
   import WordMap from "./WordMap.svelte";
-  import Spreadsheet from "./components/Spreadsheet.svelte";
   import LanguageTextSelector from "./components/LanguageTextSelector.svelte";
 </script>
 
@@ -28,5 +27,4 @@
   <hr />
   <LanguageTextSelector />
   <WordMap />
-  <Spreadsheet />
 </main>
